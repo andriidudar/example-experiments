@@ -25,16 +25,16 @@ for i in range(steps):
     experiment.log_image('./images/image_' + str(randrange(8)) + '.png', step=i)
 
 
-experiment.log_audio('./audio/zero/0ab3b47d_nohash_0.wav', file_name='zero')
-experiment.log_audio('./audio/one/0a7c2a8d_nohash_0.wav', file_name='one')
-experiment.log_audio('./audio/two/0a7c2a8d_nohash_0.wav', file_name='two')
-experiment.log_audio('./audio/three/0a9f9af7_nohash_0.wav', file_name='three')
-experiment.log_audio('./audio/four/0a9f9af7_nohash_0.wav', file_name='four')
-experiment.log_audio('./audio/five/0a9f9af7_nohash_0.wav', file_name='five')
-experiment.log_audio('./audio/six/0a7c2a8d_nohash_0.wav', file_name='six')
-experiment.log_audio('./audio/seven/0a0b46ae_nohash_0.wav', file_name='seven')
-experiment.log_audio('./audio/eight/0a9f9af7_nohash_0.wav', file_name='eight')
-experiment.log_audio('./audio/nine/0a7c2a8d_nohash_0.wav', file_name='nine')
+experiment.log_audio('./audios/zero/0ab3b47d_nohash_0.wav', file_name='zero')
+experiment.log_audio('./audios/one/0a7c2a8d_nohash_0.wav', file_name='one')
+experiment.log_audio('./audios/two/0a7c2a8d_nohash_0.wav', file_name='two')
+experiment.log_audio('./audios/three/0a9f9af7_nohash_0.wav', file_name='three')
+experiment.log_audio('./audios/four/0a9f9af7_nohash_0.wav', file_name='four')
+experiment.log_audio('./audios/five/0a9f9af7_nohash_0.wav', file_name='five')
+experiment.log_audio('./audios/six/0a7c2a8d_nohash_0.wav', file_name='six')
+experiment.log_audio('./audios/seven/0a0b46ae_nohash_0.wav', file_name='seven')
+experiment.log_audio('./audios/eight/0a9f9af7_nohash_0.wav', file_name='eight')
+experiment.log_audio('./audios/nine/0a7c2a8d_nohash_0.wav', file_name='nine')
 
 
 for i in range(steps):
