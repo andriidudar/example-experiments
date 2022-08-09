@@ -10,12 +10,20 @@ experiment = Experiment(
     workspace="andriidudar",
 )
 
+steps = 10
+params = 10
+metrics = 10
+
 experiment.set_model_graph('0-> 2-> 3-> 4', overwrite=False)
 
-experiment.log_image('./images/image_1.png')
-experiment.log_image('./images/image_2.png')
-experiment.log_image('./images/image_3.png')
-experiment.log_image('./images/image_4.png')
+
+for i in range(steps):
+    experiment.log_image('./images/image_' + str(randrange(8)) + '.png', step=i)
+    experiment.log_image('./images/image_' + str(randrange(8)) + '.png', step=i)
+    experiment.log_image('./images/image_' + str(randrange(8)) + '.png', step=i)
+    experiment.log_image('./images/image_' + str(randrange(8)) + '.png', step=i)
+    experiment.log_image('./images/image_' + str(randrange(8)) + '.png', step=i)
+
 
 experiment.log_audio('./audio/zero/0ab3b47d_nohash_0.wav', file_name='zero')
 experiment.log_audio('./audio/one/0a7c2a8d_nohash_0.wav', file_name='one')
@@ -29,12 +37,12 @@ experiment.log_audio('./audio/eight/0a9f9af7_nohash_0.wav', file_name='eight')
 experiment.log_audio('./audio/nine/0a7c2a8d_nohash_0.wav', file_name='nine')
 
 
-for i in range(50):
-    for j in range(10):
+for i in range(steps):
+    for j in range(metrics):
         sleep(0.005)
         experiment.log_metric("metric_" + str(j), min(max(i + randrange(20), 0), 100), step=i)
 
-for i in range(10):
+for i in range(params):
     sleep(0.005)
     experiment.log_parameter('param_' + str(i), 'random_value_' + str(randrange(10)))
 
