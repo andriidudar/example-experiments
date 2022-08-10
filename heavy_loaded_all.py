@@ -18,21 +18,21 @@ metrics = 10
 
 # -------------------- confusion matrix
 desired_output = [
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1],
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1],
+    [randrange(1), randrange(1), randrange(1)],
+    [randrange(1), randrange(1), randrange(1)],
+    [randrange(1), randrange(1), randrange(1)],
+    [randrange(1), randrange(1), randrange(1)],
+    [randrange(1), randrange(1), randrange(1)],
+    [randrange(1), randrange(1), randrange(1)],
  ]
 
 actual_output = [
-    [0.1, 0.5, 0.4],
-    [0.2, 0.2, 0.3],
-    [0.7, 0.4, 0.5],
-    [0.3, 0.8, 0.3],
-    [0.0, 0.5, 0.3],
-    [0.1, 0.5, 0.5],
+    [randrange(1, step=0.1), randrange(1, step=0.1), randrange(1, step=0.1)],
+    [randrange(1, step=0.1), randrange(1, step=0.1), randrange(1, step=0.1)],
+    [randrange(1, step=0.1), randrange(1, step=0.1), randrange(1, step=0.1)],
+    [randrange(1, step=0.1), randrange(1, step=0.1), randrange(1, step=0.1)],
+    [randrange(1, step=0.1), randrange(1, step=0.1), randrange(1, step=0.1)],
+    [randrange(1, step=0.1), randrange(1, step=0.1), randrange(1, step=0.1)],
  ]
 
 experiment.log_confusion_matrix(desired_output, actual_output)
@@ -41,7 +41,7 @@ experiment.log_confusion_matrix(desired_output, actual_output)
 experiment.set_model_graph('0 -> ' + str(randrange(3)) + ' -> ' + str(randrange(5)) + ' -> 6')
 
 # -------------------- HTML
-experiment.log_html('<a href="www.comet.ml"> I love Comet.ml </a>')
+experiment.log_html('<a href="www.comet.ml"> I love Comet.ml ' + str(randrange(5)) + 'times </a>')
 
 # -------------------- 3D Histogram
 for i in range(steps):
