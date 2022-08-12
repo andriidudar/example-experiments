@@ -68,7 +68,7 @@ for i in range(steps):
 
     # -------------------- graphics
     experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
-    # experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
+    experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
     # experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
     # experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
     # experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
