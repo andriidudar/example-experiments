@@ -62,16 +62,17 @@ else:
     experiment.log_model('Heavy Images', 'heavy_loaded_images.py')
 
 for i in range(steps):
-    sleep(2)
+    sleep(10)
     # -------------------- 3D Histogram
     experiment.log_histogram_3d(numpy.array([randrange(5), randrange(5), randrange(5)]), step=i)
 
     # -------------------- graphics
-    experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
-    experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
-    # experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
-    # experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
-    # experiment.log_image('./images/image_' + str(randrange(7) + 1) + '.png', step=i)
+    if bool(getrandbits(1)):
+        experiment.log_image('./images/image_' + str(randrange(3) + 1) + '.jpg', step=i)
+    elif bool(getrandbits(1)):
+        experiment.log_image('./images_random_name_1/image_' + str(randrange(3) + 1) + '.jpg', step=i)
+    elif bool(getrandbits(1)):
+        experiment.log_image('./images_random_name_2/image_' + str(randrange(3) + 1) + '.jpg', step=i)
 
     # -------------------- text
     experiment.log_text('random text' + str(random()), step=i)
