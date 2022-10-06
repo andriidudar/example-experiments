@@ -12,9 +12,9 @@ experiment = Experiment(
     workspace="andriidudar",
 )
 
-steps = 10
-params = 10
-metrics = 10
+steps = 30
+params = randrange(30)
+metrics = randrange(30)
 
 # -------------------- confusion matrix
 desired_output = [
@@ -62,7 +62,7 @@ else:
     experiment.log_model('Heavy Images', 'heavy_loaded_images.py')
 
 for i in range(steps):
-    sleep(10)
+    sleep(randrange(20))
     # -------------------- 3D Histogram
     experiment.log_histogram_3d(numpy.array([randrange(5), randrange(5), randrange(5)]), step=i)
 
@@ -82,7 +82,8 @@ for i in range(steps):
 
     for j in range(metrics):
         sleep(0.005)
-        experiment.log_metric("metric_" + str(j), min(max(i + randrange(20), 0), 100), step=i)
+        experiment.log_metric("metric_" + str(j), min(max(i + randrange(20) * random(), 0), 10 * metrics), step=i)
 
 
 experiment.end()
+
