@@ -5,6 +5,8 @@ import numpy as numpy
 from comet_ml import Experiment
 import os
 
+import to_import as custom
+
 os.environ["COMET_URL_OVERRIDE"] = "https://staging.comet.ml/clientlib/"
 experiment = Experiment(
     api_key="hLkHHYMaD3qQtDT1upEGro0EV",
@@ -78,7 +80,7 @@ for i in range(steps):
     experiment.log_text('random text' + str(random()), step=i)
 
     # -------------------- params
-    experiment.log_parameter('param_' + str(i), 'random_value_' + str(randrange(10)))
+    experiment.log_parameter('param_' + str(i), 'random_value_' + str(custom.fib(randrange(10))))
 
     for j in range(metrics):
         sleep(0.005)
